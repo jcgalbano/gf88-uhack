@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Form, Row, Col} from 'react-bootstrap'
 import axios from 'axios'
-
+import SweetAlert from 'sweetalert2-react'
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
 class Validation extends Component {
   state = {
@@ -33,6 +34,7 @@ class Validation extends Component {
   }
   
   processTransactionVerification = async () => {
+    this.setState({ show: true })
     const { property_id } = this.props.match.params
     const { dateOfSale, price, remarks, newOwnerFirstName, newOwnerLastName } = this.state
     let newOwner = await this.getOwner(newOwnerFirstName, newOwnerLastName)
@@ -229,7 +231,14 @@ class Validation extends Component {
                 </div>
               </div>
               <div className="row apply-btn">
+
                 <button className="offset-md-5 col-md-2 btn upload-btn-success" onClick={() => this.processTransactionVerification()}>Apply</button>
+                <SweetAlert
+                  show={this.state.show}
+                  title="Success!"
+                  text="Resolution request sent to the authorities. "
+                  onConfirm={() => this.props.history.push('/dashboard')}
+                />
               </div>
             </div>
         );
