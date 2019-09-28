@@ -6,10 +6,11 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 class Dashboard extends Component {
   render() {
     return(
-      <div className="container">
-        <p className="main-color largify remove-margin">Admin Dashboard</p>
-        <p className="remove-margin dark-grey-label">Pending Transfer Certificate of Title Applications</p>
-
+      <div className="admin-dash container">
+        <div className="admin-label-container">
+          <p className="main-color largify remove-margin">Admin Dashboard</p>
+          <p className="remove-margin dark-grey-label">Pending Transfer Certificate of Title Applications</p>
+        </div>
         <div className="table-row row">
           <div className="col-md-3 bold-text">
             Date
@@ -45,7 +46,7 @@ class Dashboard extends Component {
           <div className="col-md-3">
             September 23, 2019
           </div>
-          <div className="col-md-3">
+          <div className="main-color col-md-3">
             2134341
           </div>
           <div className="col-md-3">
@@ -60,7 +61,7 @@ class Dashboard extends Component {
           <div className="col-md-3">
             September 23, 2019
           </div>
-          <div className="col-md-3">
+          <div className="main-color col-md-3">
             3134334
           </div>
           <div className="col-md-3">
@@ -75,7 +76,7 @@ class Dashboard extends Component {
           <div className="col-md-3">
             September 21, 2019
           </div>
-          <div className="col-md-3">
+          <div className="main-color col-md-3">
             9139434
           </div>
           <div className="col-md-3">
@@ -90,7 +91,7 @@ class Dashboard extends Component {
           <div className="col-md-3">
             September 18, 2019
           </div>
-          <div className="col-md-3">
+          <div className="main-color col-md-3">
             3813431
           </div>
           <div className="col-md-3">
