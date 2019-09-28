@@ -15,8 +15,8 @@ const routing = (
   <Router>
     <div>
       <Route exact path='/' component={Home} />
-      <Route exact path='/property' component={Property} />
-      <Route exact path='/validation' component={Validation} />
+      <Route exact path='/properties/:property_id' component={Property} />
+      <Route exact path='/properties/validation/:property_id' component={Validation} />
       <Route exact path='/dashboard' component={Dashboard} />
     </div>
   </Router>
