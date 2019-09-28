@@ -73,7 +73,7 @@
 #grey-label {
   text-align: left;
   font-size:  20px;
-  font-family: Apercu;
+  /* font-family: Apercu; */
   letter-spacing: 0;
   color: #B4B4B4;
   opacity: 1;
@@ -85,9 +85,34 @@
 .table-row {
   padding:20px;
 }
+
 .admin-dash {
   padding-top:50px;
 }
 .admin-label-container {
   padding-bottom:20px;
+}
+
+p {
+  font-size: 20px;
+}
+#red-label {
+  color: #FF2700;
+}
+.parcel-pad {
+  padding: 36px;
+}
+.property-head {
+  padding-top: 100px;
+}
+#dropdown-history{
+  color: #FF2700;
+  background-color: white;
+  border-color: #FF2700;
+}
+#sel-record {
+  padding-left: 18px;
+}
+#btn-title {
+  margin-right: 30px;
 }
