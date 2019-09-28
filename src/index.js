@@ -8,12 +8,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from './components/home';
 import Property from './components/property';
+import Validation from './components/validation';
 
 const routing = (
   <Router>
     <div>
       <Route exact path='/' component={Home} />
-      <Route path='/properties/:property_id' component={Property} />
+      <Route exact path='/properties/:property_id' component={Property} />
+      <Route exact path='/properties/validation/:property_id' component={Validation} />
     </div>
   </Router>
 )

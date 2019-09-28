@@ -20,3 +20,46 @@
 .App-link {
   color: #09d3ac;
 }
+
+.main-color {
+  color: #FF2700 !important;
+}
+.upload-btn {
+  color: #FF2700 !important;
+  background-color: white !important;
+  boder: solid;
+  border-color: #FF2700;
+}
+.upload-btn-success {
+  color: white !important;
+  background-color: #FF2700 !important;
+}
+.upload-lower-sec {
+  padding-top: 10px;
+  padding-left: 90px;
+}
+.upload-lower-sec-label {
+  padding-left: 30px;
+}
+.remove-margin {
+  margin: 0;
+}
+.upload-upper-sec {
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.dark-grey-label {
+  color: #606060;
+  font-size: 32px;
+}
+.light-grey-label {
+  color: #989898;
+}
+.largify {
+  font-size: 45px;
+}
+.apply-btn {
+  padding: 30px;
+  height: 120px;
+}
