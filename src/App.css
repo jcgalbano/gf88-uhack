@@ -55,3 +55,20 @@
 .largify {
   font-size: 45px;
 }
+.big-title{
+  text-align: left;
+  font-size: 40px !important;
+  /* font-family: Apercu; */
+  letter-spacing: 0 !important;
+  color: #FF2700 !important;
+  opacity: 1;
+}
+#grey-label {
+  text-align: left;
+  font-size:  20px;
+  font-family: Apercu;
+  letter-spacing: 0;
+  color: #B4B4B4;
+  opacity: 1;
+  padding-right: 20px;
+}
