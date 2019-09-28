@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 import SweetAlert from 'sweetalert2-react';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 
@@ -29,12 +30,13 @@ class Dashboard extends Component {
             September 28, 2019
           </div>
           <div className="col-md-3">
-            4953451
+            A92D1
           </div>
           <div className="col-md-3">
-            Juan Ancheta
+            John David Villanueva
           </div>
           <div className="col-md-3">
+            {/* Send to authenticate/title/0xa4dB926362e20744A99A26600E703551b041ebF8 */}
             <button className="btn upload-btn btn-sm">Resolve</button>
           </div>
         </div>
