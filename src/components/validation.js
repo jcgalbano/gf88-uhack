@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ImageUploader from 'react-images-upload';
-
+import SweetAlert from 'sweetalert2-react';
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 
 class Validation extends Component {
   state = {
@@ -177,7 +178,13 @@ class Validation extends Component {
                 </div>
               </div>
               <div className="row apply-btn">
-                <button className="offset-md-5 col-md-2 btn upload-btn-success">Apply</button>
+                <button className="offset-md-5 col-md-2 btn upload-btn-success" onClick={() => this.setState({ show: true })}>Apply</button>
+                <SweetAlert
+                  show={this.state.show}
+                  title="Success!"
+                  text="Resolution request sent to the authorities. "
+                  onConfirm={() => this.props.history.push('/dashboard')}
+                />
               </div>
             </div>
         );
