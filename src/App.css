@@ -58,6 +58,9 @@
 .largify {
   font-size: 45px;
 }
+.mediumify {
+  font-size: 30px;
+}
 .apply-btn {
   padding: 30px;
   height: 120px;
@@ -115,4 +118,12 @@ p {
 }
 #btn-title {
   margin-right: 30px;
+}
+.data-sec {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.add-pad {
+  margin: 40px;
+  padding-top: 20px;
 }

@@ -10,6 +10,7 @@ import Home from './components/home';
 import Property from './components/property';
 import Validation from './components/validation';
 import Dashboard from './components/dashboard';
+import Resolve from './components/resolve';
 
 const routing = (
   <Router>
@@ -18,6 +19,7 @@ const routing = (
       <Route exact path='/properties/:property_id' component={Property} />
       <Route exact path='/properties/validation/:property_id' component={Validation} />
       <Route exact path='/dashboard' component={Dashboard} />
+      <Route exact path='/resolve/:property_id' component={Resolve} />
     </div>
   </Router>
 )
