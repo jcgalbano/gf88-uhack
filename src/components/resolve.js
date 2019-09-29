@@ -1,6 +1,45 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 class Resolve extends Component {
+  state = {
+    prevOwnerLicense: '',
+    newOwnerLicense: '',
+    recordIndex: 0
+  }
+
+  async componentDidMount() {
+    const { property_id } = this.props.match.params
+    const res = await axios.get(`http://localhost:3005/api/property/${property_id}`)
+    let property = res.data
+    const allPropertiesRes = await axios.get('http://localhost:3005/api/properties')
+    const recordIndex = allPropertiesRes.data.indexOf(property_id)
+    console.log('recordIndex: ', recordIndex)
+    this.setState({ recordIndex })
+
+    const previousOwnerRes = await axios.get(`http://localhost:3005/api/user/${property.owner}`)
+    this.setState({ prevOwnerLicense: previousOwnerRes.data.driversLicense })
+    console.log(previousOwnerRes.data.driversLicense)
+
+    const newOwnerAddress = property.history[property.history.length-1].owner
+    const newOwnerRes = await axios.get(`http://localhost:3005/api/user/${newOwnerAddress}`)
+    this.setState({ newOwnerAddress, newOwnerLicense: newOwnerRes.data.driversLicense })
+    console.log(newOwnerRes.data.driversLicense)
+  }
+
+  processTransactionVerification = async () => {
+    const { property_id } = this.props.match.params
+    let data = {
+      recordIndex: this.state.recordIndex,
+      newOwner: this.state.newOwnerAddress
+    }
+    
+    console.log(data)
+    console.log('approving...')
+    const res = await axios.put(`http://localhost:3005/api/property/${property_id}/authenticate`, data)
+    console.log(res.data)
+  }
+
   render() {
     return(
       <div className="container">
@@ -22,12 +61,10 @@ class Resolve extends Component {
         <div className="data-sec">
           <p className="main-color mediumify">IDs Submitted</p>
           <div className="row">
-            <p className="col-md-12">Government ID 1</p>
-            <div className="col-md-6">Image Here</div>
-            <div className="col-md-6">Image Here</div>
-            <p className="col-md-12">Government ID 2</p>
-            <div className="col-md-6">Image Here</div>
-            <div className="col-md-6">Image Here</div>
+            <p className="col-md-12">Government ID 1 (Previous Owner)</p>
+            <div className="col-md-6"><img src={this.state.prevOwnerLicense} /> </div>
+            <p className="col-md-12">Government ID 2 (New Owner)</p>
+            <div className="col-md-6"><img src={this.state.newOwnerLicense} /></div>
           </div>
         </div>
 

@@ -30,7 +30,7 @@ class Dashboard extends Component {
           <div className="col-md-3">
             September 28, 2019
           </div>
-          <div className="col-md-3">
+          <div className="main-color col-md-3">
             A92D1
           </div>
           <div className="col-md-3">
@@ -38,7 +38,7 @@ class Dashboard extends Component {
           </div>
           <div className="col-md-3">
             {/* Send to authenticate/title/0xa4dB926362e20744A99A26600E703551b041ebF8 */}
-            <button className="btn upload-btn btn-sm">Resolve</button>
+            <button className="btn upload-btn btn-sm" onClick={() => this.props.history.push('/resolve/0xa4dB926362e20744A99A26600E703551b041ebF8')}>Resolve</button>
           </div>
         </div>
 

@@ -52,7 +52,7 @@ class Validation extends Component {
     let res = await axios.post(`http://localhost:3005/api/property/${property_id}/verify`, data)
     console.log('upon verification: ', res.data)
     if (res.data.success) {
-      // go to dashboard
+      this.props.history.push('/dashboard')
     }
   }
 

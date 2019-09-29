@@ -58,6 +58,7 @@ class Property extends Component {
               <p>Date: {activeHistory.datesOfSale}</p>
               <p>Price: PHP {activeHistory.price}</p>
               <p>Payment Verification Code: {activeHistory.paymentVerification}</p>
+              <p>Approved: {activeHistory.approved ? 'TRUE' : 'FOR VERIFICATION'}</p>
     
               <button id="btn-title" className="btn upload-btn" onClick={() => window.open(activeHistory.title)}>View Title</button>
               <button className="btn upload-btn" onClick={() => window.open(activeHistory.deedOfSale)}>View Deed</button>
